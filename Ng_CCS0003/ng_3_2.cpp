@@ -1,7 +1,7 @@
 #include <iostream> 
 using namespace std;
 
-int main(void)
+int main()
 {
     int Number = 10;       
     char Letter = 'a';     
