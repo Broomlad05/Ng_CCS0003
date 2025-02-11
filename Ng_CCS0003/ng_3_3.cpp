@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main(void)
+int main()
 {
     int num1, num2;
     int sum, difference, product, remainder, quotient;
