@@ -2,14 +2,11 @@
 using namespace std;
 
 int main() {
-    // Employee Information
     string payrollPeriod, employeeID, employeeName;
     double basicSalary, allowances, latesMinutes;
     
-    // Constants for deductions
     const double PHILHEALTH = 1200.00, PAGIBIG = 850.00, SSS = 1800.00;
     
-    // User Input
     cout << "Enter Payroll Period: ";
     getline(cin, payrollPeriod);
     cout << "Enter Employee ID: ";
@@ -24,20 +21,16 @@ int main() {
     cout << "Enter Lates and Absences (in minutes): ";
     cin >> latesMinutes;
 
-    // Compute Deductions
-    double hourlyRate = (basicSalary / 30) / 8;  // Hourly rate
-    double latesHours = latesMinutes / 60.0;     // Convert minutes to hours
-    double latesDeductions = latesHours * hourlyRate; // Compute deduction
+    double hourlyRate = (basicSalary / 30) / 8;  
+    double latesHours = latesMinutes / 60.0;    
+    double latesDeductions = latesHours * hourlyRate;
 
-    // Compute Tax (25% if salary > 25000, otherwise 0%)
     double tax = (basicSalary > 25000.00) ? (basicSalary * 0.25) : 0.00;
 
-    // Compute total earnings and deductions
     double totalEarnings = basicSalary + allowances;
     double totalDeductions = latesDeductions + PHILHEALTH + PAGIBIG + SSS + tax;
     double netPay = totalEarnings - totalDeductions;
 
-    // Output Payroll Slip
     cout << "\n=== PAYROLL SLIP ===\n";
     cout << "Payroll Period: " << payrollPeriod << endl;
     cout << "Employee ID: " << employeeID << endl;
